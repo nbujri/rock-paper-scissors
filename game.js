@@ -16,8 +16,8 @@ function computerPlay() {
     }
 }
 
-function playGame(playerSelection, computerSelection) {
-    playerSelection = window.prompt("Enter rock, paper, or scissor: ").toLowerCase();
+function playRound(playerSelection, computerSelection) {
+    playerSelection = this.value.toLowerCase();
     computerSelection = computerPlay().toLowerCase();
 
     if (playerSelection === computerSelection) {
@@ -47,10 +47,13 @@ function playGame(playerSelection, computerSelection) {
 }
 
 function game() {
-    for (let i = 0; i < 5; i++) {
-        console.log(playGame());
-    }
+    // for (let i = 0; i < 5; i++) {
+    //     console.log(playRound());
+    // }
 }
 
-game()
+const buttons = document.querySelectorAll('button');
+buttons.forEach(button => button.addEventListener('click', playRound))
+
+
 
